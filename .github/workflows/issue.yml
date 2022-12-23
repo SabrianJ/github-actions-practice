@@ -1,0 +1,9 @@
+name: Issue trigerred
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened, edited, milestoned]
+jobs:
+  output:
+    - name: Output event
+      run: echo "${{ toJson(github.event) }}"
